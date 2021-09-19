@@ -5,28 +5,28 @@
 class Kodoo < Formula
   desc "Terminal UI for Odoo"
   homepage "https://github.com/chermed/kodoo"
-  version "0.3.0"
+  version "0.3.1"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.0/kodoo_0.3.0_darwin_amd64.tar.gz"
-      sha256 "9424ef902362b1496469af710ba41fae5fa9c49b059f5f07215637b8ed606dea"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_darwin_amd64.tar.gz"
+      sha256 "e4da59831c4548e5ce3ba28d250b95fbaa0efc26321866c9a07fc563fc27a8f1"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.0/kodoo_0.3.0_darwin_arm64.tar.gz"
-      sha256 "e70897e0cd815a897b0855511824415e889e7c4181b775cc0f0a0ad9995fe3f2"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_darwin_arm64.tar.gz"
+      sha256 "00058d8d5ebcddf3067d3628662e7fa548594ad5f26e1c4fd69fcef558cbeb6b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.0/kodoo_0.3.0_linux_amd64.tar.gz"
-      sha256 "7e725780460375fbb1c6ce3d6682c07b23761e7ebb1881d0cb1e478e10af19d1"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_linux_amd64.tar.gz"
+      sha256 "22ea654df6e11d2b56f933ad20fbecce4005cca3193f10413542f32ea0669c54"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.0/kodoo_0.3.0_linux_arm64.tar.gz"
-      sha256 "efb7f16c8b7c185711aa754e1ed0d25c5d888024b399a3098a54a4827bf23f35"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_linux_arm64.tar.gz"
+      sha256 "44cdd8822eedc3c041ae290540634a4b0181a364b599c5712acbe29afd097119"
     end
   end
 
