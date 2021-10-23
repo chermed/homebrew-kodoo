@@ -5,33 +5,44 @@
 class Kodoo < Formula
   desc "Terminal UI for Odoo"
   homepage "https://github.com/chermed/kodoo"
-  version "0.3.1"
-  bottle :unneeded
+  version "0.3.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_darwin_amd64.tar.gz"
-      sha256 "e4da59831c4548e5ce3ba28d250b95fbaa0efc26321866c9a07fc563fc27a8f1"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_darwin_arm64.tar.gz"
-      sha256 "00058d8d5ebcddf3067d3628662e7fa548594ad5f26e1c4fd69fcef558cbeb6b"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.2/kodoo_0.3.2_darwin_arm64.tar.gz"
+      sha256 "c240bfa735d886ae2ebe655e0ddd15f02765abc584b7383692a031fdb2736411"
+
+      def install
+        bin.install "kodoo"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.2/kodoo_0.3.2_darwin_amd64.tar.gz"
+      sha256 "122d3b03d43d610f438a1c8dd682ce6828bb3ef3a5cc3c840c3bfae731341d51"
+
+      def install
+        bin.install "kodoo"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_linux_amd64.tar.gz"
-      sha256 "22ea654df6e11d2b56f933ad20fbecce4005cca3193f10413542f32ea0669c54"
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.2/kodoo_0.3.2_linux_amd64.tar.gz"
+      sha256 "e83386062c1bb4051c50827a93314002fdbcbbfcc3ae02c75d72e32b5faabc91"
+
+      def install
+        bin.install "kodoo"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chermed/kodoo/releases/download/v0.3.1/kodoo_0.3.1_linux_arm64.tar.gz"
-      sha256 "44cdd8822eedc3c041ae290540634a4b0181a364b599c5712acbe29afd097119"
-    end
-  end
+      url "https://github.com/chermed/kodoo/releases/download/v0.3.2/kodoo_0.3.2_linux_arm64.tar.gz"
+      sha256 "20e01975416f47f5d58a3f2a9fb9c6b3c451f05400bf1b333beff3e359996f52"
 
-  def install
-    bin.install "kodoo"
+      def install
+        bin.install "kodoo"
+      end
+    end
   end
 
   test do
